@@ -1,11 +1,8 @@
-const express = require('express');// expressモジュールの読み込み
+const express = require('express');
 const request = require('request');
 
-const app = express();// expressアプリ生成
-// app.use(multer().none());// multerでブラウザから送られたデータを解釈する
-app.use(express.static('web'));// webフォルダの中身を公開する
-// app.use(bodyparser.urlencoded({ extended: true }));
-
+const app = express();
+app.use(express.static('web'));
 
 const port = process.removeAllListeners.PORT || 3000;
 app.listen(port);
@@ -15,17 +12,12 @@ app.get('/api/v1/prefectures', (req, res) => {
 
     request('https://covid19-japan-web-api.now.sh/api//v1/prefectures', function (error, response, body) {
         if (!error && response.statusCode == 200) {
-        var prefJson = JSON.parse(body);
-            // for (var pref in prefJson) {
-            //     console.log(pref);
-            // }
-            console.log(prefJson[0]);
-
+            var prefJson = JSON.parse(body);
             // send each prefectures infomations about covid-19 as json
             res.json(prefJson);
         }
     })
-    
+
 })
 
 // http://localhost:3000/api/v1/:idにアクセスされたときに特定のToDoを返す
