@@ -1,0 +1,78 @@
+html {
+    background-color: antiquewhite;
+    body {
+        h1 {
+            text-align: center;
+            margin: 150px auto 50px;
+        }
+        div#time {
+            width: 100%;
+            height: 50px;
+            p {
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+        div#buttonWrap {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            button#getPrefsInfo {
+                display: inline-block;
+                padding: 0.5em 1em;
+                text-decoration: none;
+                border-radius: 4px;
+                color: #ffffff;
+                background: #808080;
+                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+                // border-bottom: solid 3px #5e7fca;
+                &:active {
+                    -webkit-transform: translateY(4px);
+                    transform: translateY(4px);
+                    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+                    border-bottom: none;
+                }
+            }
+        }
+        div#fs {
+            clear: both;
+        }
+        table,
+        td,
+        th {
+            border: 1px solid #595959;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 3px;
+            width: 100px;
+            height: 30px;
+        }
+        table {
+            margin: 0 auto 100px;
+        }
+        tr {
+            &.float-data:hover {
+                box-shadow: 10px 10px 10px 10px #595959;
+                transform: translateY(-5px);
+                // cursor: pointer;
+            }
+            td {
+                background: #ffffff;
+                &:hover {
+                    // box-shadow: 10px 10px 10px 10px #595959;
+                }
+            }
+        }
+        th {
+            background: #f0e6cc;
+        }
+        .even {
+            background: #fbf8f0;
+        }
+        .odd {
+            background: #fefcf9;
+        }
+    }
+}
