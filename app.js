@@ -4,7 +4,7 @@ const request = require('request');
 const app = express();
 app.use(express.static('web'));
 
-const port = process.removeAllListeners.PORT || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port);
 
 // When user accessed to "/api/v1/prefectures", return infomation of prefectures.
